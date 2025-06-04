@@ -1,6 +1,6 @@
 print("Hi, please enter in the name of the inventory you'd like to see the contents of:")
 
-perip = scan()
+perip = read()
 
 perip = peripheral.wrap(perip)
 
