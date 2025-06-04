@@ -1,8 +1,13 @@
+print("Hi, please enter in the name of the inventory you'd like to see the contents of:")
+
+perip = scan()
+
+perip = peripheral.wrap(perip)
 
 function format(string)
 
   local str = string:gsub("minecraft:", "")
-  str = str = str:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
+  str = str:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
   return str
   
 end
@@ -21,5 +26,6 @@ function getItems(toScan)
   end
 end
 
-getItems()
+getItems(perip)
+
   
