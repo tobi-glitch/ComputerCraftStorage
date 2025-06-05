@@ -41,7 +41,7 @@ end
 
 
 function getItems(toScan)
-  if toScan
+  if toScan then
     local items = {}
     for i, v in pairs(toScan.list()) do
   
