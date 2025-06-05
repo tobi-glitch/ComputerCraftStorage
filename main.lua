@@ -27,11 +27,12 @@ function format(string)
   end
 end
 
-function Search(list, string)
+function Search(list, str)
   local foundItems = {}
   for _, v in pairs(list) do
-    if string.find(a, string) then
-        table.insert(foundItems)
+    
+    if string.find(string.upper(v), string.upper(str)) then
+        table.insert(foundItems, v)
     end
     
   end
@@ -60,13 +61,15 @@ end
 
 
 
-function scanAll(string)
-  local tables = {}
+function scanAll(str)
+  local total = {}
   for _, v in pairs(working) do
-    table.insert(getItems(v))
+    table.insert(total, Search(getItems(v), str))
   end
+  return total
 end
 
 init()
 
-print(textutils.serialise(getItems(working[1])))
+print(textutils.serialise(scanAll("oak")))
+
