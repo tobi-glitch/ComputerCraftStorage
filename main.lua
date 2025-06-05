@@ -30,11 +30,8 @@ end
 function Search(list, str)
   local foundItems = {}
   for _, v in pairs(list) do
-    for d, k in pairs(list) do
-      if string.find(string.upper(k), string.upper(str)) then
-        table.insert(foundItems, k)
-    end
-
+      if string.find(string.upper(v.name), string.upper(str)) then
+        table.insert(foundItems, v)
     end
   end
   return foundItems
