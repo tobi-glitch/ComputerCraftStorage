@@ -10,17 +10,23 @@ end
 
 
 function getItems(toScan)
-  local peri = peripheral.wrap(toScan)
-
+  local items = []
   for i, v in pairs(peri.list()) do
 
     local name = v.name
     name = format(name)
     local count = v.count
-    print(name.." - "..count)
+
+    table.insert(items, [name, count])
 
   end
+  return items
 end
 
-print(textutils.serialise(activePeripherals))
+for i, v in pairs(activePeripherals) do
+  print(peripheral.getName(v))
+  for o, b in pairs(getItems)
+    print(b.name, b.count)
+  end
+end
   
