@@ -62,7 +62,12 @@ end
 function scanAll(str)
   local total = {}
   for _, v in pairs(working) do
-    table.insert(total, Search(getItems(v), str))
+
+    local items = Search(getItems(v), str)
+    
+    if #items > 0 then
+      table.insert(total, items)
+    end
   end
   return total
 end
