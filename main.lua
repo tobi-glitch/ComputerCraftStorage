@@ -10,7 +10,7 @@ end
 
 
 function getItems(toScan)
-  local items = []
+  local items = {}
   for i, v in pairs(peri.list()) do
 
     local names = v.name
