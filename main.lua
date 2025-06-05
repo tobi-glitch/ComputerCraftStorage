@@ -29,7 +29,7 @@ end
 function Search(list, string)
   local foundItems = {}
   for _, v in pairs(list) do
-    if string.find(a, string)
+    if string.find(a, string) then
         table.insert(foundItems)
     end
     
