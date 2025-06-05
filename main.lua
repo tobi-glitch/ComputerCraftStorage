@@ -11,7 +11,7 @@ end
 
 function getItems(toScan)
   local items = {}
-  for i, v in pairs(peri.list()) do
+  for i, v in pairs(toScan.list()) do
 
     local names = v.name
     name = format(name)
@@ -23,10 +23,5 @@ function getItems(toScan)
   return items
 end
 
-for i, v in pairs(activePeripherals) do
-  print(peripheral.getName(v))
-  for o, b in pairs(getItems)
-    print(b.name, b.count)
-  end
-end
+print(peripheral.getName(activePeripherals))
   
