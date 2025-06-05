@@ -41,17 +41,19 @@ end
 
 
 function getItems(toScan)
-  local items = {}
-  for i, v in pairs(toScan.list()) do
-
-    local names = v.name
-    name = format(name)
-    local counts = v.count
-
-    table.insert(items, {name = names, count = counts})
-
+  if toScan
+    local items = {}
+    for i, v in pairs(toScan.list()) do
+  
+      local names = v.name
+      name = format(name)
+      local counts = v.count
+  
+      table.insert(items, {name = names, count = counts})
+  
+    end
+    return items
   end
-  return items
 end
 
 
