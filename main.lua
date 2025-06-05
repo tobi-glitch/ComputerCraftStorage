@@ -1,8 +1,4 @@
-print("Hi, please enter in the name of the inventory you'd like to see the contents of:")
-
-perip = read()
-
-perip = peripheral.wrap(perip)
+local activePeripherals = peripheral.find("inventory")
 
 function format(string)
 
@@ -26,6 +22,5 @@ function getItems(toScan)
   end
 end
 
-getItems(perip)
-
+print(textutils.serialise(activePeripherals))
   
