@@ -7,7 +7,7 @@ function init()
   for i, v in pairs(peripheral.getNames()) do
 
     if peripheral.getType(v) == "minecraft:chest" or peripheral.getType(v) == "create:vault" then
-      table.insert(v)
+      table.insert(peripheral.wrap(v))
     end
     if peripheral.getType(v) == "minecraft:barrel" then
       accessPoint = v
