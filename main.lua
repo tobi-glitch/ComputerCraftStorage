@@ -79,7 +79,9 @@ function scanAll(str)
         table.insert(total, items)
       end
     end
-    return total
+    if #total > 0 then
+      return total
+    end
   end
 end
 
