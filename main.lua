@@ -1,4 +1,18 @@
-local activePeripherals = peripheral.find("inventory")
+local working = {}
+
+
+function init()
+  working = {}
+  for i, v in pairs(peripheral.getNames()) do
+
+    if peripheral.getType(v) == "minecraft:chest" or peripheral.getType(v) == "create:vault"
+      table.insert(v)
+    end
+  end
+end
+
+
+
 
 function format(string)
 
@@ -23,5 +37,4 @@ function getItems(toScan)
   return items
 end
 
-print(peripheral.getName(activePeripherals))
   
