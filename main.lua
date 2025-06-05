@@ -67,6 +67,6 @@ function scanAll(string)
   end
 end
 
-
+init()
 
 print(textutils.serialise(getItems(working[1])))
