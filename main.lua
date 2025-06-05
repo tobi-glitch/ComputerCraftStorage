@@ -1,12 +1,16 @@
 local working = {}
-
+local accessPoint = nil
 
 function init()
   working = {}
+  
   for i, v in pairs(peripheral.getNames()) do
 
-    if peripheral.getType(v) == "minecraft:chest" or peripheral.getType(v) == "create:vault"
+    if peripheral.getType(v) == "minecraft:chest" or peripheral.getType(v) == "create:vault" then
       table.insert(v)
+    end
+    if peripheral.getType(v) == "minecraft:barrel" then
+      accessPoint = v
     end
   end
 end
@@ -21,6 +25,18 @@ function format(string)
   return str
   
 end
+
+function Search(list, string)
+  local foundItems = {}
+  for _, v in pairs(list) do
+    if string.find(a, string)
+        table.insert(foundItems)
+    end
+    
+  end
+  return foundItems
+end
+
 
 
 function getItems(toScan)
@@ -37,4 +53,17 @@ function getItems(toScan)
   return items
 end
 
-  
+
+
+
+
+function scanAll(string)
+  local tables = {}
+  for _, v in pairs(working) do
+    table.insert(getItems(v))
+  end
+end
+
+
+
+print(textutils.serialise(getItems(working[1])))
