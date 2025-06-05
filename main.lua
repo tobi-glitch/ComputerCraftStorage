@@ -36,7 +36,7 @@ function Search(list, str)
       end
       
     end
-    if #foundItems > 0 then
+    if foundItems and #foundItems > 0 then
         return foundItems
     end
     
@@ -75,11 +75,11 @@ function scanAll(str)
   
       local items = Search(getItems(v), str)
       
-      if #items > 0 then
+      if items and #items > 0 then
         table.insert(total, items)
       end
     end
-    if #total > 0 then
+    if total and #total > 0 then
       return total
     end
   end
