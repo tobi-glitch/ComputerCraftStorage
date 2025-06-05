@@ -34,6 +34,7 @@ function Search(list, str)
         if string.find(string.upper(v.name), string.upper(str)) then
           table.insert(foundItems, v)
       end
+      
     end
     if #foundItems > 0 then
         return foundItems
@@ -54,12 +55,12 @@ function getItems(toScan)
       local counts = v.count
   
       table.insert(items, {name = names, count = counts})
+
+      if #items > 0 then
+        return items
+      end
   
     end
-    if #items > 0 then
-        return items
-    end
-    
   end
 end
 
