@@ -28,13 +28,18 @@ function format(string)
 end
 
 function Search(list, str)
-  local foundItems = {}
-  for _, v in pairs(list) do
-      if string.find(string.upper(v.name), string.upper(str)) then
-        table.insert(foundItems, v)
+  if list and str then
+    local foundItems = {}
+    for _, v in pairs(list) do
+        if string.find(string.upper(v.name), string.upper(str)) then
+          table.insert(foundItems, v)
+      end
     end
+    if #foundItems > 0 then
+        return foundItems
+    end
+    
   end
-  return foundItems
 end
 
 
@@ -51,7 +56,10 @@ function getItems(toScan)
       table.insert(items, {name = names, count = counts})
   
     end
-    return items
+    if #items > 0 then
+        return items
+    end
+    
   end
 end
 
@@ -60,16 +68,18 @@ end
 
 
 function scanAll(str)
-  local total = {}
-  for _, v in pairs(working) do
-
-    local items = Search(getItems(v), str)
-    
-    if #items > 0 then
-      table.insert(total, items)
+  if str then
+    local total = {}
+    for _, v in pairs(working) do
+  
+      local items = Search(getItems(v), str)
+      
+      if #items > 0 then
+        table.insert(total, items)
+      end
     end
+    return total
   end
-  return total
 end
 
 init()
