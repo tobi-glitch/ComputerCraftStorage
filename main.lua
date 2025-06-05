@@ -13,11 +13,11 @@ function getItems(toScan)
   local items = []
   for i, v in pairs(peri.list()) do
 
-    local name = v.name
+    local names = v.name
     name = format(name)
-    local count = v.count
+    local counts = v.count
 
-    table.insert(items, [name, count])
+    table.insert(items, {name = names, count = counts})
 
   end
   return items
