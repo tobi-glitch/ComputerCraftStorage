@@ -20,10 +20,11 @@ end
 
 function format(string)
 
-  local str = string:gsub("minecraft:", "")
-  str = str:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
-  return str
-  
+  if string then
+    local str = string:gsub("minecraft:", "")
+    str = str:gsub("(%l)(%w*)", function(a,b) return string.upper(a)..b end)
+    return str
+  end
 end
 
 function Search(list, string)
